@@ -37,20 +37,8 @@ Route::prefix('/control')->group(function () {
 });
 
 
-/* Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
- */
-
 //index
 Route::get('/control', [HomeController::class, 'index'])->name('control');
-
-
-//user profile
-Route::controller(ProfileController::class)->group(function () {
-    Route::get('control/profile', 'index')->name('user_profile');
-    Route::put('control/changePassword', 'changePassword')->name('change_password');
-    Route::put('control/update_profile', 'update')->name('update_profile');
-});
-
 
 // roles
 Route::controller(RoleController::class)->group(function () {
@@ -66,12 +54,15 @@ Route::controller(RoleController::class)->group(function () {
 // users
 Route::controller(UserController::class)->group(function () {
     Route::get('control/users', 'index');
+    Route::get('control/users/{id}/show', 'show');
     Route::get('control/users/create', 'create');
     Route::post('control/users/store', 'store');
-    Route::get('control/users/{id}/show', 'show');
     Route::get('control/users/{id}/edit', 'edit');
     Route::put('control/users/{id}/update', 'update');
     Route::delete('control/users/{id}/delete', 'destroy');
+    Route::get('control/profile', 'index_profile')->name('user_profile');
+    Route::put('control/changePassword', 'changePassword')->name('change_password');
+    Route::put('control/update_profile', 'update_profile')->name('update_profile');
 });
 
 
