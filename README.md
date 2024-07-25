@@ -44,7 +44,12 @@
 
 ## 3.  تنزيل composer dependencies و NPM dependencies
 
+
 `composer install`
+
+
 `npm install`
+
+
 عندما تقوم باستنساخ مشروع Laravel جديد، يجب عليك الآن تثبيت جميع الحزم المشروع. وهذا ما يؤدي في الواقع إلى تثبيت Laravel نفسه، من بين الحزم الضرورية الأخرى للبدء.
 
