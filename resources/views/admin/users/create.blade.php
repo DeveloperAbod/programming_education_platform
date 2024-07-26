@@ -167,7 +167,10 @@
                                                             <h5>صورة المستخدم</h5>
                                                             <div class="controls">
                                                                 <input type="file" name="avatar"
-                                                                    class="form-control mb-1">
+                                                                    class="form-control mb-1"
+                                                                    data-validation-images-regex="^.+\.(jpg|jpeg|png|gif|bmp|webp|tiff|tif|ico|svg|heif|heic|raw|cr2|nef|orf|sr2)$"
+                                                                    data-validation-images-message="يجب رفع صورة فقط"
+                                                                    aria-invalid="false">
                                                                 <div class="help-block"></div>
                                                                 @error('avatar')
                                                                     <div class="form-text text-danger">
