@@ -25,15 +25,15 @@ Route::prefix('/control')->group(function () {
     Route::post('register', [\App\Http\Controllers\Auth\RegisterController::class, 'register'])->middleware('redirectIfAuthenticated');
 
     // Password Reset Routes
-    Route::get('password/reset', [\App\Http\Controllers\Auth\ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
+    /*  Route::get('password/reset', [\App\Http\Controllers\Auth\ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
     Route::post('password/email', [\App\Http\Controllers\Auth\ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
     Route::get('password/reset/{token}', [\App\Http\Controllers\Auth\ResetPasswordController::class, 'showResetForm'])->name('password.reset');
-    Route::post('password/reset', [\App\Http\Controllers\Auth\ResetPasswordController::class, 'reset'])->name('password.update');
+    Route::post('password/reset', [\App\Http\Controllers\Auth\ResetPasswordController::class, 'reset'])->name('password.update'); */
 
     // Email Verification Routes
-    Route::get('email/verify', [\App\Http\Controllers\Auth\VerificationController::class, 'show'])->name('verification.notice');
+    /*  Route::get('email/verify', [\App\Http\Controllers\Auth\VerificationController::class, 'show'])->name('verification.notice');
     Route::get('email/verify/{id}/{hash}', [\App\Http\Controllers\Auth\VerificationController::class, 'verify'])->name('verification.verify');
-    Route::post('email/resend', [\App\Http\Controllers\Auth\VerificationController::class, 'resend'])->name('verification.resend');
+    Route::post('email/resend', [\App\Http\Controllers\Auth\VerificationController::class, 'resend'])->name('verification.resend'); */
 });
 
 
@@ -43,7 +43,7 @@ Route::get('/control', [HomeController::class, 'index'])->name('control');
 // roles
 Route::controller(RoleController::class)->group(function () {
     Route::get('control/roles', 'index');
-    Route::get('control/roles/add', 'create');
+    Route::get('control/roles/create', 'create');
     Route::post('control/roles/store', 'store');
     Route::get('control/roles/{id}/show', 'show');
     Route::get('control/roles/{id}/edit', 'edit');
@@ -79,7 +79,7 @@ Route::controller(CourseController::class)->group(function () {
     Route::put('control/courses/{id}/updateMind', 'updateMind')->name('update_courses_mind');
 
     Route::get('control/courses/pending-courses', 'pending_courses')->name('pending_courses');
-    Route::get('control/courses/{id}/pending-course', 'pending_course')->name('pending_course');
+    Route::get('control/courses/{id}/pending-course', 'show_pending_course')->name('show_pending_course');
     Route::put('control/courses/{id}/update-pending-course', 'update_pending_course')->name('update_pending_course');
 
     Route::get('control/courses/{id}/active', 'active')->name('active_course');

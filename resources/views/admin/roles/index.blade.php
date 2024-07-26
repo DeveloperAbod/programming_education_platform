@@ -40,7 +40,7 @@
                 @can('اضافة صلاحية')
                     <div class="content-header-right col-md-6 col-12">
                         <div class="btn-group float-md-right" role="group" aria-label="Button group with nested dropdown">
-                            <a href="/control/roles/add" class="btn btn-info round  box-shadow-2 px-2 mb-1"><i
+                            <a href="/control/roles/create" class="btn btn-info round  box-shadow-2 px-2 mb-1"><i
                                     class="ft-plus-circle icon-left"></i> اضافة صلاحية جديدة</a>
                         </div>
                     </div>

@@ -31,7 +31,7 @@ class CourseController extends Controller
         $this->middleware('permission:تعديل كورس', ['only' => ['edit', 'update']]);
         $this->middleware('permission:تعديل كورس خاص بي', ['only' => ['editMind', 'updateMind']]);
         $this->middleware('permission:حذف كورس', ['only' => ['destroy']]);
-        $this->middleware('permission:قبول كورس', ['only' => ['pending_courses', 'pending_course', 'update_pending_course']]);
+        $this->middleware('permission:قبول كورس', ['only' => ['pending_courses', 'show_pending_course', 'update_pending_course']]);
         $this->middleware('permission:ايقاف وتفعيل كورس', ['only' => ['active', 'deactivate']]);
     }
     public function index(Request $request)
@@ -199,7 +199,7 @@ class CourseController extends Controller
         $pending_courses = Course::where('status', 0)->orWhere('status', -1)->get();
         return view('admin.courses.pending_courses', compact('pending_courses'));
     }
-    public function pending_course($id)
+    public function show_pending_course($id)
     {
         $course_info = Course::findOrFail($id);
         return view('admin.courses.pending_course', compact('course_info'));

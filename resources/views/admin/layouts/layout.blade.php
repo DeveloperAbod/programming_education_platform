@@ -163,8 +163,8 @@
                             @endcan
 
                             @can('اضافة صلاحية')
-                                <li class="{{ Request::is('control/roles/add') ? 'active' : '' }}">
-                                    <a class="menu-item" href="/control/roles/add"><i class="ft-plus-circle"></i><span>اضافة
+                                <li class="{{ Request::is('control/roles/create') ? 'active' : '' }}">
+                                    <a class="menu-item" href="/control/roles/create"><i class="ft-plus-circle"></i><span>اضافة
                                             صلاحية</span></a>
                                 </li>
                             @endcan
